@@ -11,6 +11,7 @@ const typeDefs = gql`
     name: String
     description: String
     image: String
+    quantity: Int
     adoptfee: Float
     ability: String
     weekness: String
@@ -52,6 +53,7 @@ const typeDefs = gql`
     addUser(userName: String!, email: String!, password: String!): Auth
     addOrder(pokemons: [ID]!): Order
     updateUser(userName: String, email: String, password: String): User
+    updatePokemon(_id: ID!, quantity: Int!): Pokemon
     login(email: String!, password: String!): Auth
   }
 `;

@@ -54,7 +54,7 @@ const resolvers = {
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
-      const order = new Order({ pokmons: args.pokemons });
+      const order = new Order({ pokemons: args.pokemons });
       const line_items = [];
 
       const { pokemons } = await order.populate('pokemons');
@@ -74,7 +74,7 @@ const resolvers = {
 
         line_items.push({
           adoptfee: fee.id,
-          // quantity: 1
+          quantity: 1
         });
       }
 
@@ -115,11 +115,11 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    // updatePokemon: async (parent, { _id, quantity }) => {
-    //   const decrement = Math.abs(quantity) * -1;
+    updatePokemon: async (parent, { _id, quantity }) => {
+      const decrement = Math.abs(quantity) * -1;
 
-    //   return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
-    // },
+      return await Pokemon.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+    },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
