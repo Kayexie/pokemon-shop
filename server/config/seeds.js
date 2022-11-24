@@ -24,7 +24,7 @@ db.once('open', async () => {
       image: 'cookie-tin.jpg',
       category: categories[0]._id,
       price: 2.99,
-      quantity: 500
+      ability: 500
     },
     {
       name: 'Canned Coffee',
