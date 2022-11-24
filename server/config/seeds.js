@@ -27,6 +27,7 @@ db.once('open', async () => {
       type: types[0]._id,
       ability: 'Blaze',
       weakness:'Water',
+      quantity:1,
       adoptfee: 9.99
     },
     {
@@ -37,6 +38,7 @@ db.once('open', async () => {
       type: types[4]._id,
       ability: 'Thick Fat',
       weakness:'Fighting',
+      quantity:1,
       adoptfee: 9.99
     },
     {
@@ -47,6 +49,7 @@ db.once('open', async () => {
       type: types[0]._id,
       ability: 'Powers up Fire-type moves when the Pokémon’s HP is low.',
       weakness:'Water',
+      quantity:1,
       adoptfee: 9.99
     },
     {
@@ -57,6 +60,7 @@ db.once('open', async () => {
       type: types[6]._id,
       ability: 'Powers up Water-type moves when the Pokémon’s HP is low.',
       weakness:'Grass',
+      quantity:1,
       adoptfee: 9.99
     },
     {
@@ -67,6 +71,7 @@ db.once('open', async () => {
       type: types[1]._id,
       ability: 'Powers up Grass-type moves when the Pokémon’s HP is low.',
       Weakness:'Fire',
+      quantity:1,
       adoptfee: 9.99
     },
     {
@@ -77,6 +82,7 @@ db.once('open', async () => {
       type: types[2]._id,
       ability: 'The Pokémon is charged with static electricity, so contact with it may cause paralysis.',
       Weakness:'Ground',
+      quantity:1,
       adoptfee: 9.99
     },
   ]);
