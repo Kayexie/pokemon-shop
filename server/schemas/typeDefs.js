@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Type {
+  type Poketype {
     _id: ID
     name: String
   }
@@ -14,8 +14,8 @@ const typeDefs = gql`
     quantity: Int
     adoptfee: Float
     ability: String
-    weekness: String
-    type: Type
+    weakness: String
+    poketype: Poketype
   }
 
   type Order {
@@ -41,8 +41,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    types: [Type]
-    pokemons(type: ID, name: String): [Pokemon]
+    poketypes: [Poketype]
+    pokemons(poketype: ID, name: String): [Pokemon]
     pokemon(_id: ID!): Pokemon  
     user: User
     order(_id: ID!): Order
@@ -59,5 +59,5 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-//line 45  quanity delete
+
 //line 55 updatePokemon(_id: ID!, quantity: Int!): Pokemon
