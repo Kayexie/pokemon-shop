@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Pokemon, Type, Order } = require('../models');
+const { User, Pokemon, Poketype, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
@@ -8,11 +8,11 @@ const resolvers = {
     types: async () => {
       return await Type.find();
     },
-    pokemons: async (parent, { type, name }) => {
+    pokemons: async (parent, { poketype, name }) => {
       const params = {};
 
-      if (type) {
-        params.type = type;
+      if (poketype) {
+        params.poketype = poketype;
       }
 
       if (name) {
@@ -21,16 +21,16 @@ const resolvers = {
         };
       }
 
-      return await Pokemon.find(params).populate('type');
+      return await Pokemon.find(params).populate('poketype');
     },
     pokemon: async (parent, { _id }) => {
-      return await Pokemon.findById(_id).populate('type');
+      return await Pokemon.findById(_id).populate('poketype');
     },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'orders.pokemons',
-          populate: 'type'
+          populate: 'poketype'
         });
 
         user.orders.sort((a, b) => b.adoptDate - a.adoptDate);
@@ -44,7 +44,7 @@ const resolvers = {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
           path: 'orders.pokemons',
-          populate: 'type'
+          populate: 'poketype'
         });
 
         return user.orders.id(_id);
@@ -60,7 +60,7 @@ const resolvers = {
       const { pokemons } = await order.populate('pokemons');
 
       for (let i = 0; i < pokemons.length; i++) {
-        const pokemon = await stripe.pokemons.create({
+        const pokemon = await stripe.products.create({
           name: pokemons[i].name,
           description: pokemons[i].description,
           images: [`${url}/images/${pokemons[i].image}`]
