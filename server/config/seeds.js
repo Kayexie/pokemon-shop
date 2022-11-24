@@ -1,10 +1,10 @@
 const db = require('./connection');
-const { User, Pokemon, Type } = require('../models');
+const { User, Pokemon, Poketype } = require('../models');
 
 db.once('open', async () => {
-  await Type.deleteMany();
+  await Poketype.deleteMany();
 
-  const types = await Type.insertMany([
+  const poketypes = await Poketype.insertMany([
     { name: 'FireType' },
     { name: 'GrassType' },
     { name: 'ElectircType' },
@@ -14,7 +14,7 @@ db.once('open', async () => {
     { name: 'WaterType' },
   ]);
 
-  console.log('types seeded');
+  console.log('poketypes seeded');
 
   await Pokemon.deleteMany();
 
@@ -24,7 +24,7 @@ db.once('open', async () => {
       description:
         'It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.',
       image: '11.gif',
-      type: types[0]._id,
+      poketype: poketypes[0]._id,
       ability: 'Blaze',
       weakness:'Water',
       quantity:1,
@@ -35,7 +35,7 @@ db.once('open', async () => {
       description:
         'It is not satisfied unless it eats over 880 pounds of food every day. When it is done eating, it goes promptly to sleep.',
       image: '22.gif',
-      type: types[4]._id,
+      poketype: poketypes[1]._id,
       ability: 'Thick Fat',
       weakness:'Fighting',
       quantity:1,
@@ -46,7 +46,7 @@ db.once('open', async () => {
       description:
         'A warm-up of running around gets fire energy coursing through this Pokémon’s body. Once that happens, it’s ready to fight at full power.',
       image: '33.gif',
-      type: types[0]._id,
+      poketype: poketypes[0]._id,
       ability: 'Powers up Fire-type moves when the Pokémon’s HP is low.',
       weakness:'Water',
       quantity:1,
@@ -57,7 +57,7 @@ db.once('open', async () => {
       description:
         'When scared, this Pokémon cries. Its tears pack the chemical punch of 100 onions, and attackers won’t be able to resist weeping.',
       image: '44.gif',
-      type: types[6]._id,
+      poketype: poketypes[6]._id,
       ability: 'Powers up Water-type moves when the Pokémon’s HP is low.',
       weakness:'Grass',
       quantity:1,
@@ -68,7 +68,7 @@ db.once('open', async () => {
       description:
         'When it uses its special stick to strike up a beat, the sound waves produced carry revitalizing energy to the plants and flowers in the area.',
       image: '55.gif',
-      type: types[1]._id,
+      poketype: poketypes[1]._id,
       ability: 'Powers up Grass-type moves when the Pokémon’s HP is low.',
       Weakness:'Fire',
       quantity:1,
@@ -79,7 +79,7 @@ db.once('open', async () => {
       description:
         'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.',
       image: '66.gif',
-      type: types[2]._id,
+      poketype: poketypes[2]._id,
       ability: 'The Pokémon is charged with static electricity, so contact with it may cause paralysis.',
       Weakness:'Ground',
       quantity:1,
