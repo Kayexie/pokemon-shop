@@ -30,9 +30,9 @@ const pokemonSchema = new Schema({
   weakness:{
     type: String
   },
-  type: {
+  poketype: {
     type: Schema.Types.ObjectId,
-    ref: 'Type',
+    ref: 'Poketype',
     required: true
   }
 });

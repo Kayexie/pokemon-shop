@@ -1,6 +1,6 @@
 const User = require('./User');
 const Pokemon = require('./Pokemon');
-const Type = require('./Type');
+const Poketype = require('./Poketype');
 const Order = require('./Order');
 
-module.exports = { User, Pokemon, Type, Order };
+module.exports = { User, Pokemon, Poketype, Order };
