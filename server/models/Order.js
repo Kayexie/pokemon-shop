@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const orderSchema = new Schema({
-  purchaseDate: {
+  adoptDate: {
     type: Date,
     default: Date.now
   },
-  products: [
+  pokemons: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Product'
+      ref: 'Pokemon'
     }
   ]
 });
