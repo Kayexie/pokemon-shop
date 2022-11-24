@@ -123,6 +123,15 @@ db.once('open', async () => {
       image: 'alphabet-blocks.jpg',
       price: 9.99,
       quantity: 600
+    },
+    {
+      name: 'Pokemon',
+      category: categories[4]._id,
+      description:
+        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
+      image: 'gastly.gif',
+      price: 9.99,
+      quantity: 600
     }
   ]);
 
