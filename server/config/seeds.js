@@ -1,141 +1,87 @@
 const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const { User, Pokemon, Type } = require('../models');
 
 db.once('open', async () => {
-  await Category.deleteMany();
+  await Type.deleteMany();
 
-  const categories = await Category.insertMany([
-    { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
-    { name: 'Books' },
-    { name: 'Toys' }
+  const types = await Type.insertMany([
+    { name: 'FireType' },
+    { name: 'GrassType' },
+    { name: 'ElectircType' },
+    { name: 'GhostType' },
+    { name: 'NormalType' },
+    { name: 'GhostType' },
+    { name: 'WaterType' },
   ]);
 
-  console.log('categories seeded');
+  console.log('types seeded');
 
-  await Product.deleteMany();
+  await Pokemon.deleteMany();
 
-  const products = await Product.insertMany([
+  const pokemons = await Pokemon.insertMany([
     {
-      name: 'Tin of Cookies',
+      name: 'Charizard',
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
-      category: categories[0]._id,
-      price: 2.99,
-      quantity: 500
+        'It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.',
+      image: '11.gif',
+      type: types[0]._id,
+      ability: 'Blaze',
+      Weaknesses:'Water',
+      adoptfee: 9.99
     },
     {
-      name: 'Canned Coffee',
+      name: 'Snorlax',
       description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'canned-coffee.jpg',
-      category: categories[0]._id,
-      price: 1.99,
-      quantity: 500
+        'It is not satisfied unless it eats over 880 pounds of food every day. When it is done eating, it goes promptly to sleep.',
+      image: '22.gif',
+      type: types[4]._id,
+      ability: 'Thick Fat',
+      Weaknesses:'Fighting',
+      adoptfee: 9.99
     },
     {
-      name: 'Toilet Paper',
-      category: categories[1]._id,
+      name: 'Scorbunny',
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'toilet-paper.jpg',
-      price: 7.99,
-      quantity: 20
+        'A warm-up of running around gets fire energy coursing through this Pokémon’s body. Once that happens, it’s ready to fight at full power.',
+      image: '33.gif',
+      type: types[0]._id,
+      ability: 'Powers up Fire-type moves when the Pokémon’s HP is low.',
+      Weaknesses:'Water',
+      adoptfee: 9.99
     },
     {
-      name: 'Handmade Soap',
-      category: categories[1]._id,
+      name: 'Sobble',
       description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'soap.jpg',
-      price: 3.99,
-      quantity: 50
+        'When scared, this Pokémon cries. Its tears pack the chemical punch of 100 onions, and attackers won’t be able to resist weeping.',
+      image: '44.gif',
+      type: types[6]._id,
+      ability: 'Powers up Water-type moves when the Pokémon’s HP is low.',
+      Weaknesses:'Grass',
+      adoptfee: 9.99
     },
     {
-      name: 'Set of Wooden Spoons',
-      category: categories[1]._id,
+      name: 'Grookey',
       description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'wooden-spoons.jpg',
-      price: 14.99,
-      quantity: 100
+        'When it uses its special stick to strike up a beat, the sound waves produced carry revitalizing energy to the plants and flowers in the area.',
+      image: '55.gif',
+      type: types[1]._id,
+      ability: 'Powers up Grass-type moves when the Pokémon’s HP is low.',
+      Weaknesses:'Fire',
+      adoptfee: 9.99
     },
     {
-      name: 'Camera',
-      category: categories[2]._id,
+      name: 'Pikachu',
       description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'camera.jpg',
-      price: 399.99,
-      quantity: 30
+        'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.',
+      image: '66.gif',
+      type: types[2]._id,
+      ability: 'The Pokémon is charged with static electricity, so contact with it may cause paralysis.',
+      Weaknesses:'Ground',
+      adoptfee: 9.99
     },
-    {
-      name: 'Tablet',
-      category: categories[2]._id,
-      description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
-      image: 'tablet.jpg',
-      price: 199.99,
-      quantity: 30
-    },
-    {
-      name: 'Tales at Bedtime',
-      category: categories[3]._id,
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
-      image: 'bedtime-book.jpg',
-      price: 9.99,
-      quantity: 100
-    },
-    {
-      name: 'Spinning Top',
-      category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'spinning-top.jpg',
-      price: 1.99,
-      quantity: 1000
-    },
-    {
-      name: 'Set of Plastic Horses',
-      category: categories[4]._id,
-      description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
-      image: 'plastic-horses.jpg',
-      price: 2.99,
-      quantity: 1000
-    },
-    {
-      name: 'Teddy Bear',
-      category: categories[4]._id,
-      description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'teddy-bear.jpg',
-      price: 7.99,
-      quantity: 100
-    },
-    {
-      name: 'Alphabet Blocks',
-      category: categories[4]._id,
-      description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 9.99,
-      quantity: 600
-    },
-    {
-      name: 'Pokemon',
-      category: categories[4]._id,
-      description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'gastly.gif',
-      price: 9.99,
-      quantity: 600
-    }
   ]);
 
-  console.log('products seeded');
+  console.log('pokemons seeded');
 
   await User.deleteMany();
 
@@ -145,7 +91,7 @@ db.once('open', async () => {
     password: 'password12345',
     orders: [
       {
-        products: [products[0]._id, products[0]._id, products[1]._id]
+        pokemons: [pokemons[0]._id, pokemons[0]._id, pokemons[1]._id]
       }
     ]
   });
