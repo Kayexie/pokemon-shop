@@ -19,7 +19,10 @@ export const ADD_ORDER = gql`
         _id
         name
         description
+        quantity
         adoptfee
+        ability
+        weakness
         type {
           name
         }
