@@ -1,12 +1,13 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_PRODUCTS = gql`
+export const QUERY_POKEMONS = gql`
   query getPokemons($type: ID) {
     pokemons(type: $type) {
       _id
       name
       description
       adoptfee
+      quantity
       ability
       weakness
       image
@@ -23,26 +24,28 @@ export const QUERY_CHECKOUT = gql`
       session
     }
   }
-`;
+`;//something to change (products)
 
 export const QUERY_ALL_POKEMONS = gql`
   {
-    products {
+    pokemons {
       _id
       name
       description
-      price
+      adoptfee
       quantity
-      category {
+      ability
+      weakness
+      type {
         name
       }
     }
   }
 `;
 
-export const QUERY_CATEGORIES = gql`
+export const QUERY_TYPES = gql`
   {
-    categories {
+    types {
       _id
       name
     }
@@ -55,13 +58,15 @@ export const QUERY_USER = gql`
       userName
       orders {
         _id
-        purchaseDate
-        products {
+        adoptDate
+        pokemons {
           _id
           name
           description
-          price
+          adoptfee
           quantity
+          ability
+          weakness
           image
         }
       }
