@@ -74,10 +74,10 @@ function App() {
                 path="/orderHistory" 
                 element={<OrderHistory />} 
               />
-              <Route 
-                path="/products/:id" 
+              {/* <Route 
+                path="/pokemons/:id" 
                 element={<Detail />} 
-              />
+              /> */}
               <Route
                 path="*" 
                 element={<NoMatch />} 

@@ -7,6 +7,7 @@ const Start = () => {
     return (
         <div>
         <div class="btnS">
+        <p>The pokemon Shop</p>
         <button onClick={() => navigate('/Home')}>Start</button>
         </div>
          </div>
