@@ -26,7 +26,7 @@ db.once('open', async () => {
       image: '11.gif',
       type: types[0]._id,
       ability: 'Blaze',
-      Weaknesses:'Water',
+      weakness:'Water',
       adoptfee: 9.99
     },
     {
@@ -36,7 +36,7 @@ db.once('open', async () => {
       image: '22.gif',
       type: types[4]._id,
       ability: 'Thick Fat',
-      Weaknesses:'Fighting',
+      weakness:'Fighting',
       adoptfee: 9.99
     },
     {
@@ -46,7 +46,7 @@ db.once('open', async () => {
       image: '33.gif',
       type: types[0]._id,
       ability: 'Powers up Fire-type moves when the Pokémon’s HP is low.',
-      Weaknesses:'Water',
+      weakness:'Water',
       adoptfee: 9.99
     },
     {
@@ -56,7 +56,7 @@ db.once('open', async () => {
       image: '44.gif',
       type: types[6]._id,
       ability: 'Powers up Water-type moves when the Pokémon’s HP is low.',
-      Weaknesses:'Grass',
+      weakness:'Grass',
       adoptfee: 9.99
     },
     {
@@ -66,7 +66,7 @@ db.once('open', async () => {
       image: '55.gif',
       type: types[1]._id,
       ability: 'Powers up Grass-type moves when the Pokémon’s HP is low.',
-      Weaknesses:'Fire',
+      Weakness:'Fire',
       adoptfee: 9.99
     },
     {
@@ -76,7 +76,7 @@ db.once('open', async () => {
       image: '66.gif',
       type: types[2]._id,
       ability: 'The Pokémon is charged with static electricity, so contact with it may cause paralysis.',
-      Weaknesses:'Ground',
+      Weakness:'Ground',
       adoptfee: 9.99
     },
   ]);

@@ -33,7 +33,7 @@ const resolvers = {
           populate: 'type'
         });
 
-        user.orders.sort((a, b) => b.adpotDate - a.adpotDate);
+        user.orders.sort((a, b) => b.adoptDate - a.adoptDate);
 
         return user;
       }
