@@ -60,7 +60,7 @@ const resolvers = {
       const { pokemons } = await order.populate('pokemons');
 
       for (let i = 0; i < pokemons.length; i++) {
-        const pokemon = await stripe.products.create({
+        const pokemon = await stripe.pokemons.create({
           name: pokemons[i].name,
           description: pokemons[i].description,
           images: [`${url}/images/${pokemons[i].image}`]

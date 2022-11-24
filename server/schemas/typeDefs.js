@@ -46,7 +46,7 @@ const typeDefs = gql`
     pokemon(_id: ID!): Pokemon  
     user: User
     order(_id: ID!): Order
-    checkout(products: [ID]!): Checkout
+    checkout(pokemons: [ID]!): Checkout
   }
 
   type Mutation {

@@ -19,12 +19,12 @@ export const QUERY_POKEMONS = gql`
 `;
 
 export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
+  query getCheckout($pokemons: [ID]!) {
+    checkout(pokemons: $pokemons) {
       session
     }
   }
-`;//something to change (products)
+`;//something to change (pokemons)
 
 export const QUERY_ALL_POKEMONS = gql`
   {

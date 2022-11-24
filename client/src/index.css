@@ -101,12 +101,12 @@ header a {
   background-color: #c9453a;
 } */
 
-.category{
+.type{
   display: flex;
   justify-content: center;
 }
 
-#category-button{
+#type-button{
   background-color: #fccb55; /* Green */
   border: none;
   color: white;
@@ -119,7 +119,7 @@ header a {
   width: 500px;
 }
 
-#category-button:hover{
+#type-button:hover{
   background-color: #80c9ac;
 }
 
