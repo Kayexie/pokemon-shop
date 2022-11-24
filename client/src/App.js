@@ -8,6 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import Start from './pages/Start'
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
@@ -17,6 +18,7 @@ import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -39,14 +41,21 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <div> 
+          
           <StoreProvider>
-            <Nav />
-            <Routes>
+             <Nav />
+            <Routes>   
               <Route 
                 path="/" 
+                element={<Start />} 
+              />
+          
+              <Route 
+                path="/Home" 
                 element={<Home />} 
               />
               <Route 
