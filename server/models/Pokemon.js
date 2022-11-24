@@ -22,10 +22,10 @@ const pokemonSchema = new Schema({
   ability: {
     type: String
   },
-  weekness:{
+  weakness:{
     type: String
   },
-  Type: {
+  type: {
     type: Schema.Types.ObjectId,
     ref: 'Type',
     required: true
