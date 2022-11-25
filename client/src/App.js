@@ -53,9 +53,8 @@ function App() {
                 path="/" 
                 element={<Start />} 
               />
-          
               <Route 
-                path="/Home" 
+                path="/home" 
                 element={<Home />} 
               />
               <Route 
@@ -74,10 +73,10 @@ function App() {
                 path="/orderHistory" 
                 element={<OrderHistory />} 
               />
-              {/* <Route 
+              <Route 
                 path="/pokemons/:id" 
                 element={<Detail />} 
-              /> */}
+              />
               <Route
                 path="*" 
                 element={<NoMatch />} 

@@ -6,7 +6,7 @@ const Start = () => {
     const navigate = useNavigate();
     return (
         <div>
-        <div class="btnS">
+        <div className="btnS">
         <p>The pokemon Shop</p>
         <button onClick={() => navigate('/Home')}>Start</button>
         </div>
