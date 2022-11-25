@@ -107,8 +107,17 @@ function Detail() {
           <p id='pokeAbility'>{currentPokemon.ability}</p>
           <p className='title'>Weakness:</p>
           <p id='pokeWeakness'>{currentPokemon.weakness}</p>
-          
-          <p>
+        <div className="container my-1">
+          <Link to="/home">← Back to pokemons</Link>
+
+          <h2>{currentPokemon.name}</h2>
+
+          <p>{currentPokemon.description}</p>
+
+          <p>{currentPokemon.ability}</p>
+          <p>{currentPokemon.pokemonType}</p>
+          <p>{currentPokemon.weakness}</p>
+
             <strong>Adopt Fee:</strong>${currentPokemon.adoptfee}{' '}
             </p>
             <button id='detailButton' onClick={addToCart}>Add to Cart</button>
@@ -118,6 +127,16 @@ function Detail() {
             >
               Remove from Cart
             </button> */}
+            {/* <strong>Price:</strong>${currentPokemon.adoptfee}{' '} */}
+            <button onClick={addToCart}>Adopt Me!</button>
+            <button
+              disabled={!cart.find((p) => p._id === currentPokemon._id)}
+              onClick={removeFromCart}
+            >
+              ↩️
+            </button>
+          </p>
+
 
           </div>
           </div>

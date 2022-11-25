@@ -10,7 +10,7 @@ import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
 import cartImage from '../../assets/cart.png';
 
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+const stripePromise = loadStripe('pk_test_51M7rzEL7w33it4ToWdbw96IWHdHsZXfXyTqmF3rpv1LS0x53YrdO2l50HRlTmdtRGliSXqHFsdst8VwLtcula8CL00nB2wZ0od');
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
@@ -49,10 +49,12 @@ const Cart = () => {
 
   function submitCheckout() {
     const pokemonIds = [];
-
+    console.log(pokemonIds);
     state.cart.forEach((item) => {
+      console.log('4hing');
       for (let i = 0; i < item.purchaseQuantity; i++) {
         pokemonIds.push(item._id);
+        console.log(item._id)
       }
     });
 
@@ -74,7 +76,7 @@ const Cart = () => {
       <div className="close" onClick={toggleCart}>
         [close]
       </div>
-      <h2>Shopping Cart</h2>
+      <h2>Your Pokemons</h2>
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
@@ -82,10 +84,10 @@ const Cart = () => {
           ))}
 
           <div className="flex-row space-between">
-            <strong>Total: ${calculateTotal()}</strong>
+            <strong>Adopt fee: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
+              <button onClick={submitCheckout}>Let's go</button>
             ) : (
               <span>(log in to check out)</span>
             )}
@@ -94,9 +96,9 @@ const Cart = () => {
       ) : (
         <h3>
           <span role="img" aria-label="shocked">
-            😱
+          😺
           </span>
-          You haven't added anything to your cart yet!
+          You haven't selected your pokemons yet!
         </h3>
       )}
     </div>
