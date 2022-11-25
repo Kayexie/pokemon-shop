@@ -27,6 +27,10 @@ const pokemonSchema = new Schema({
   ability: {
     type: String
   },
+  pokemonType: {
+    type: String
+  },
+  
   weakness:{
     type: String
   },

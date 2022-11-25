@@ -9,6 +9,7 @@ export const QUERY_POKEMONS = gql`
       adoptfee
       quantity
       ability
+      pokemonType
       weakness
       image
       poketype {
@@ -35,6 +36,7 @@ export const QUERY_ALL_POKEMONS = gql`
       adoptfee
       quantity
       ability
+      pokemonType
       weakness
       poketype {
         name
@@ -66,6 +68,7 @@ export const QUERY_USER = gql`
           adoptfee
           quantity
           ability
+          pokemonType
           weakness
           image
         }

@@ -14,6 +14,7 @@ const typeDefs = gql`
     quantity: Int
     adoptfee: Float
     ability: String
+    pokemonType: String
     weakness: String
     poketype: Poketype
   }
