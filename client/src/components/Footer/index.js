@@ -1,18 +1,21 @@
-const Pokeball  = require('../../assets/pokeball.png');
-const Pokemongo  = require('../../assets/pokemongo.png');
-const Octocat  = require('../../assets/octocat.png');
+import React from 'react';
+import './footer.css'
+
+import Pokeball from '../../assets/pokeball.png';
+import Pokemongo from '../../assets/pokemongo.png';
+import Octocat from '../../assets/octocat.png';
 
 export default function Footer() {
     return(
         <div className="footer">
-            <div className="logo">
+            <div className="logo" id='pokeball'>
                <a target='_blank' rel='noreferrer' href="https://www.pokemon.com/us/">
                      <img src={Pokeball} alt="pokemon official" width="30"/> 
                </a>
             </div>
-            <div className="logo">
+            <div className="logo" id='pokemongo'>
                <a target='_blank' rel='noreferrer' href="https://pokemongolive.com/en/">
-                     <img src={Pokemongo} alt="pokebmon go" width="30"/> 
+                     <img src={Pokemongo} alt="pokebmon go" width="50"/> 
                </a>
             </div>
             <div className="logo">

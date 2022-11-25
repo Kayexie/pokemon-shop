@@ -4,6 +4,7 @@ import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+import './style.css';
 
 function PokemonItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -41,14 +42,15 @@ function PokemonItem(item) {
 
   return (
     <div className="card py-1">
-      <Link to={`/pokemons/${_id}`}>
-        <img id="image"
+      <img className="image"
           alt={name}
           src={`/images/${image}`}
         />
+      <Link to={`/pokemons/${_id}`}>
+      <p>{name}</p>
       </Link>
       <div className="card-p">
-        <p>{name}</p>
+
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${adoptfee}</span>
         <button onClick={addToCart}>Add to cart</button>

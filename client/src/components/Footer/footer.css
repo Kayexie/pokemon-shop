@@ -1,0 +1,21 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    /* position:fixed;
+    left: 0;
+    bottom: 0; */
+    width: 100%;
+    background-color: #fccb55;
+}
+
+.logo{
+    margin: 20px;
+}
+
+#pokemongo{
+    margin-top: 10px;
+}
+
+#pokeball{
+    margin-top: 23px;
+}

@@ -45,7 +45,7 @@ db.once('open', async () => {
       name: 'Scorbunny',
       description:
         'A warm-up of running around gets fire energy coursing through this Pokémon’s body. Once that happens, it’s ready to fight at full power.',
-      image: '33.gif',
+      image: '813.png',
       poketype: poketypes[0]._id,
       ability: 'Powers up Fire-type moves when the Pokémon’s HP is low.',
       weakness:'Water',
