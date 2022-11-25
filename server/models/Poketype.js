@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const typeSchema = new Schema({
+const poketypeSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -10,6 +10,6 @@ const typeSchema = new Schema({
   }
 });
 
-const Type = mongoose.model('Type', typeSchema);
+const Poketype = mongoose.model('Poketype', poketypeSchema);
 
-module.exports = Type;
+module.exports = Poketype;

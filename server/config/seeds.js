@@ -3,7 +3,7 @@ const { User, Pokemon, Poketype } = require('../models');
 
 db.once('open', async () => {
   await Poketype.deleteMany();
-
+  await db.dropCollection('types');
   const poketypes = await Poketype.insertMany([
     { name: 'FireType' },
     { name: 'GrassType' },
