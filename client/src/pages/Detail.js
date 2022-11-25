@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import Footer from "../components/Footer";
+import TypeMenu from '../components/TypeMenu';
+import back from '../assets/back.png';
 
 import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
@@ -72,49 +75,57 @@ function Detail() {
     }
   };
 
-  const removeFromCart = () => {
-    dispatch({
-      type: REMOVE_FROM_CART,
-      _id: currentPokemon._id,
-    });
+  // const removeFromCart = () => {
+  //   dispatch({
+  //     type: REMOVE_FROM_CART,
+  //     _id: currentPokemon._id,
+  //   });
 
-    idbPromise('cart', 'delete', { ...currentPokemon });
-  };
+  //   idbPromise('cart', 'delete', { ...currentPokemon });
+  // };
 
   return (
     <>
+      <div><TypeMenu/></div>
       {currentPokemon && cart ? (
-        <div className="container my-1">
-          <Link to="/">← Back to pokemons</Link>
+        <div className="containerDetail my-1">
+          <Link to="/Home">
+            <img src={back} width='200px'></img>
+          </Link>
+         <div className='content'>
+         <img
+            src={`/images/${currentPokemon.image}`}
+            alt={currentPokemon.name}
+            width='300px'
+          />
+        <div  className='conent-p'> 
+          <p id='pokeName'>{currentPokemon.name}</p>
+          <p id='pokeType'>{currentPokemon.pokemonType}</p>
+          <p >{currentPokemon.description}</p>
+          <p className='title'>Ability:</p>
 
-          <h2>{currentPokemon.name}</h2>
-
-          <p>{currentPokemon.description}</p>
-
-          <p>{currentPokemon.ability}</p>
-          <p>{currentPokemon.pokemonType}</p>
-          <p>{currentPokemon.weakness}</p>
+          <p id='pokeAbility'>{currentPokemon.ability}</p>
+          <p className='title'>Weakness:</p>
+          <p id='pokeWeakness'>{currentPokemon.weakness}</p>
           
-
           <p>
-            <strong>Price:</strong>${currentPokemon.adoptfee}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
-            <button
+            <strong>Adopt Fee:</strong>${currentPokemon.adoptfee}{' '}
+            </p>
+            <button id='detailButton' onClick={addToCart}>Add to Cart</button>
+            {/* <button
               disabled={!cart.find((p) => p._id === currentPokemon._id)}
               onClick={removeFromCart}
             >
               Remove from Cart
-            </button>
-          </p>
+            </button> */}
 
-          <img
-            src={`/images/${currentPokemon.image}`}
-            alt={currentPokemon.name}
-          />
+          </div>
+          </div>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
+      <Footer />
     </>
   );
 }
