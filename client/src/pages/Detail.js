@@ -92,7 +92,7 @@ function Detail() {
           <p>{currentPokemon.description}</p>
 
           <p>
-            <strong>Price:</strong>${currentPokemon. adoptfee}{' '}
+            <strong>Price:</strong>${currentPokemon.adoptfee}{' '}
             <button onClick={addToCart}>Add to Cart</button>
             <button
               disabled={!cart.find((p) => p._id === currentPokemon._id)}
