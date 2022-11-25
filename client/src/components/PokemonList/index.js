@@ -10,7 +10,7 @@ import spinner from '../../assets/spinner.gif';
 function PokemonList() {
   const [state, dispatch] = useStoreContext();
 
-  const { currentType } = state;
+  const { currentPoketype } = state;
 
   const { loading, data } = useQuery(QUERY_POKEMONS);
 
@@ -54,7 +54,7 @@ function PokemonList() {
               _id={pokemon._id}
               image={pokemon.image}
               name={pokemon.name}
-              price={pokemon.adoptfee}
+              adoptfee={pokemon.adoptfee}
               quantity={pokemon.quantity}
             />
           ))}

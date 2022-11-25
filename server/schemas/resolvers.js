@@ -5,8 +5,8 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
-    types: async () => {
-      return await Type.find();
+    poketypes: async () => {
+      return await Poketype.find();
     },
     pokemons: async (parent, { poketype, name }) => {
       const params = {};
