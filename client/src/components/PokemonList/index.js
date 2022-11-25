@@ -34,12 +34,12 @@ function PokemonList() {
   }, [data, loading, dispatch]);
 
   function filterPokemons() {
-    if (!currentType) {
+    if (!currentPoketype) {
       return state.pokemons;
     }
 
     return state.pokemons.filter(
-      (pokemon) => pokemon.type._id === currentType
+      (pokemon) => pokemon.poketype._id === currentPoketype
     );
   }
 
@@ -54,7 +54,7 @@ function PokemonList() {
               _id={pokemon._id}
               image={pokemon.image}
               name={pokemon.name}
-              price={pokemon.price}
+              price={pokemon.adoptfee}
               quantity={pokemon.quantity}
             />
           ))}

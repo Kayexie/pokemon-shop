@@ -42,22 +42,22 @@ const Cart = () => {
   function calculateTotal() {
     let sum = 0;
     state.cart.forEach((item) => {
-      sum += item.price * item.purchaseQuantity;
+      sum += item.adoptfee * item.purchaseQuantity;
     });
     return sum.toFixed(2);
   }
 
   function submitCheckout() {
-    const productIds = [];
+    const pokemonIds = [];
 
     state.cart.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
-        productIds.push(item._id);
+        pokemonIds.push(item._id);
       }
     });
 
     getCheckout({
-      variables: { pokemons: productIds },
+      variables: { pokemons: pokemonIds },
     });
   }
 
