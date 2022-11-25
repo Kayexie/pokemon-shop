@@ -2,6 +2,7 @@ import React from "react";
 import PokemonList from "../components/PokemonList";
 import TypeMenu from "../components/TypeMenu";
 import Cart from "../components/Cart";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <TypeMenu />
       <PokemonList />
       <Cart />
+      <Footer />
     </div>
   );
 };
