@@ -1,7 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Pokemon, Poketype, Order } = require('../models');
 const { signToken } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require('stripe')('sk_test_51M7rzEL7w33it4TonKBFjln4PkdI6P743mMkaSNd89hy09NDhRy8a4Xv0kE2FPbc7Djl5SdoODRAjslECDgPkwBd00oLiotGaU');
 
 const resolvers = {
   Query: {
@@ -56,28 +56,29 @@ const resolvers = {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ pokemons: args.pokemons });
       const line_items = [];
-
+      
       const { pokemons } = await order.populate('pokemons');
-
+      
       for (let i = 0; i < pokemons.length; i++) {
         const pokemon = await stripe.products.create({
           name: pokemons[i].name,
           description: pokemons[i].description,
           images: [`${url}/images/${pokemons[i].image}`]
         });
-
-        const fee = await stripe.prices.create({
-          pokemon: pokemon.id,
-          unit_amount: pokemons[i].adoptfee * 100,
-          currency: 'cad',
-        });
-
+        
+        
+          const fee = await stripe.prices.create({
+            product: pokemon.id,
+            unit_amount: pokemons[i].adoptfee * 100,
+            currency: 'usd',
+          });
+          
         line_items.push({
-          adoptfee: fee.id,
+          price: fee.id,
           quantity: 1
         });
       }
-
+      
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         line_items,
@@ -85,7 +86,7 @@ const resolvers = {
         success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${url}/`
       });
-
+      
       return { session: session.id };
     }
   },

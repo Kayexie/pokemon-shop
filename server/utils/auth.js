@@ -7,23 +7,23 @@ module.exports = {
   authMiddleware: function ({ req }) {
     // allows token to be sent via req.body, req.query, or headers
     let token = req.body.token || req.query.token || req.headers.authorization;
-
+    console.log('1st inside authmiddlew'+token);
     // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
       token = token.split(' ').pop().trim();
     }
-
+    console.log('2th inside authmiddlew'+token);
     if (!token) {
       return req;
     }
-
+    console.log('3th inside authmiddlew'+token);
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       req.user = data;
     } catch {
       console.log('Invalid token');
     }
-
+    console.log('4th inside authmiddlew'+token);
     return req;
   },
   signToken: function ({ userName, email, _id }) {
