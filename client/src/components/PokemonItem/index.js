@@ -6,6 +6,7 @@ import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 import './style.css';
 
+
 function PokemonItem(item) {
   const [state, dispatch] = useStoreContext();
 
@@ -14,6 +15,7 @@ function PokemonItem(item) {
     name,
     _id,
     adoptfee,
+    ability,
     quantity
   } = item;
 
@@ -51,8 +53,8 @@ function PokemonItem(item) {
       </Link>
       <div className="card-p">
 
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${adoptfee}</span>
+        <div>{quantity} {pluralize("item", quantity)} in stock </div>
+        <span>${adoptfee}{ability} </span>
         <button onClick={addToCart}>Add to cart</button>
       </div>
     </div>
