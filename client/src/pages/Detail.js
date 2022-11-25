@@ -85,7 +85,7 @@ function Detail() {
     <>
       {currentPokemon && cart ? (
         <div className="container my-1">
-          <Link to="/">← Back to pokemons</Link>
+          <Link to="/home">← Back to pokemons</Link>
 
           <h2>{currentPokemon.name}</h2>
 
@@ -97,13 +97,13 @@ function Detail() {
           
 
           <p>
-            <strong>Price:</strong>${currentPokemon.adoptfee}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
+            {/* <strong>Price:</strong>${currentPokemon.adoptfee}{' '} */}
+            <button onClick={addToCart}>Adopt Me!</button>
             <button
               disabled={!cart.find((p) => p._id === currentPokemon._id)}
               onClick={removeFromCart}
             >
-              Remove from Cart
+              ↩️
             </button>
           </p>
 
