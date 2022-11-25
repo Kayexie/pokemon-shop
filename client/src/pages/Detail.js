@@ -107,17 +107,8 @@ function Detail() {
           <p id='pokeAbility'>{currentPokemon.ability}</p>
           <p className='title'>Weakness:</p>
           <p id='pokeWeakness'>{currentPokemon.weakness}</p>
-        <div className="container my-1">
-          <Link to="/home">← Back to pokemons</Link>
-
-          <h2>{currentPokemon.name}</h2>
-
-          <p>{currentPokemon.description}</p>
-
-          <p>{currentPokemon.ability}</p>
-          <p>{currentPokemon.pokemonType}</p>
-          <p>{currentPokemon.weakness}</p>
-
+          
+          <p>
             <strong>Adopt Fee:</strong>${currentPokemon.adoptfee}{' '}
             </p>
             <button id='detailButton' onClick={addToCart}>Add to Cart</button>
@@ -127,16 +118,6 @@ function Detail() {
             >
               Remove from Cart
             </button> */}
-            {/* <strong>Price:</strong>${currentPokemon.adoptfee}{' '} */}
-            <button onClick={addToCart}>Adopt Me!</button>
-            <button
-              disabled={!cart.find((p) => p._id === currentPokemon._id)}
-              onClick={removeFromCart}
-            >
-              ↩️
-            </button>
-          </p>
-
 
           </div>
           </div>
@@ -148,5 +129,68 @@ function Detail() {
     </>
   );
 }
+
+//   return (
+//     <>
+//       <div><TypeMenu/></div>
+//       {currentPokemon && cart ? (
+//         <div className="containerDetail my-1">
+//           <Link to="/Home">
+//             <img src={back} width='200px'></img>
+//           </Link>
+//          <div className='content'>
+//          <img
+//             src={`/images/${currentPokemon.image}`}
+//             alt={currentPokemon.name}
+//             width='300px'
+//           />
+//         <div  className='conent-p'> 
+//           <p id='pokeName'>{currentPokemon.name}</p>
+//           <p id='pokeType'>{currentPokemon.pokemonType}</p>
+//           <p >{currentPokemon.description}</p>
+//           <p className='title'>Ability:</p>
+
+//           <p id='pokeAbility'>{currentPokemon.ability}</p>
+//           <p className='title'>Weakness:</p>
+//           <p id='pokeWeakness'>{currentPokemon.weakness}</p>
+
+//           <h2>{currentPokemon.name}</h2>
+
+//           <p>{currentPokemon.description}</p>
+
+//           <p>{currentPokemon.ability}</p>
+//           <p>{currentPokemon.pokemonType}</p>
+//           <p>{currentPokemon.weakness}</p>
+
+//             <strong>Adopt Fee:</strong>${currentPokemon.adoptfee}{' '}
+//             </p>
+//             <button id='detailButton' onClick={addToCart}>Add to Cart</button>
+//             {/* <button
+//               disabled={!cart.find((p) => p._id === currentPokemon._id)}
+//               onClick={removeFromCart}
+//             >
+//               Remove from Cart
+//             </button> */}
+//             {/* <strong>Price:</strong>${currentPokemon.adoptfee}{' '} */}
+//             <button onClick={addToCart}>Adopt Me!</button>
+//             <button
+//               disabled={!cart.find((p) => p._id === currentPokemon._id)}
+//               onClick={removeFromCart}
+//             >
+//               ↩️
+//             </button>
+//           </p>
+
+
+//           </div>
+//           </div>
+//         </div>
+//       ) : null}
+//       {loading ? <img src={spinner} alt="loading" /> : null}
+//       <Cart />
+//       <Footer />
+//     </>
+//   );
+// }
 
 export default Detail;
