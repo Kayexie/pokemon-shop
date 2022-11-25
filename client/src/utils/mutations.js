@@ -22,6 +22,7 @@ export const ADD_ORDER = gql`
         quantity
         adoptfee
         ability
+        pokemonType
         weakness
         poketype {
           name
