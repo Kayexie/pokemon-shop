@@ -23,7 +23,7 @@ export const ADD_ORDER = gql`
         adoptfee
         ability
         weakness
-        type {
+        poketype {
           name
         }
       }

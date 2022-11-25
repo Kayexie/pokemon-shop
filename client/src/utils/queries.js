@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_POKEMONS = gql`
-  query getPokemons($type: ID) {
-    pokemons(type: $type) {
+  query getPokemons($poketype: ID) {
+    pokemons(poketype: $poketype) {
       _id
       name
       description
@@ -11,7 +11,7 @@ export const QUERY_POKEMONS = gql`
       ability
       weakness
       image
-      type {
+      poketype {
         _id
       }
     }
@@ -36,16 +36,16 @@ export const QUERY_ALL_POKEMONS = gql`
       quantity
       ability
       weakness
-      type {
+      poketype {
         name
       }
     }
   }
 `;
 
-export const QUERY_TYPES = gql`
+export const QUERY_POKETYPES = gql`
   {
-    types {
+    poketypes {
       _id
       name
     }

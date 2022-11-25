@@ -9,8 +9,8 @@ const StoreProvider = ({ value = [], ...props }) => {
     pokemons: [],
     cart: [],
     cartOpen: false,
-    types: [],
-    currentType: '',
+    poketypes: [],
+    currentPoketype: '',
   });
 
   return <Provider value={[state, dispatch]} {...props} />;

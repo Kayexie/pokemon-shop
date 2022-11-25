@@ -5,8 +5,8 @@ import {
   UPDATE_CART_QUANTITY,
   REMOVE_FROM_CART,
   ADD_MULTIPLE_TO_CART,
-  UPDATE_TYPES,
-  UPDATE_CURRENT_Type,
+  UPDATE_POKETYPES,
+  UPDATE_CURRENT_POKETYPE,
   CLEAR_CART,
   TOGGLE_CART
 } from "./actions";
@@ -68,16 +68,16 @@ export const reducer = (state, action) => {
         cartOpen: !state.cartOpen
       };
 
-    case UPDATE_TYPES:
+    case UPDATE_POKETYPES:
       return {
         ...state,
-        types: [...action.types],
+        poketypes: [...action.poketypes],
       };
 
-    case UPDATE_CURRENT_Type:
+    case UPDATE_CURRENT_POKETYPE:
       return {
         ...state,
-        currentType: action.currentType
+        currentPoketype: action.currentPoketype
       }
 
     default:
