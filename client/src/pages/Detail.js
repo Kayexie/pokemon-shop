@@ -8,7 +8,6 @@ import back from '../assets/back.png';
 import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
 import {
-  REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
   ADD_TO_CART,
   UPDATE_POKEMONS,
@@ -75,22 +74,13 @@ function Detail() {
     }
   };
 
-  // const removeFromCart = () => {
-  //   dispatch({
-  //     type: REMOVE_FROM_CART,
-  //     _id: currentPokemon._id,
-  //   });
-
-  //   idbPromise('cart', 'delete', { ...currentPokemon });
-  // };
-
   return (
     <>
       <div><TypeMenu/></div>
       {currentPokemon && cart ? (
         <div className="containerDetail my-1">
           <Link to="/Home">
-            <img src={back} width='200px'></img>
+            <img src={back} width='200px' alt='go back to home'></img>
           </Link>
          <div className='content'>
          <img
@@ -111,13 +101,7 @@ function Detail() {
           <p>
             <strong>Adopt Fee:</strong>${currentPokemon.adoptfee}{' '}
             </p>
-            <button id='detailButton' onClick={addToCart}>Add to Cart</button>
-            {/* <button
-              disabled={!cart.find((p) => p._id === currentPokemon._id)}
-              onClick={removeFromCart}
-            >
-              Remove from Cart
-            </button> */}
+            <button id='detailButton' onClick={addToCart}>Adopt Me</button>
 
           </div>
           </div>
@@ -129,68 +113,5 @@ function Detail() {
     </>
   );
 }
-
-//   return (
-//     <>
-//       <div><TypeMenu/></div>
-//       {currentPokemon && cart ? (
-//         <div className="containerDetail my-1">
-//           <Link to="/Home">
-//             <img src={back} width='200px'></img>
-//           </Link>
-//          <div className='content'>
-//          <img
-//             src={`/images/${currentPokemon.image}`}
-//             alt={currentPokemon.name}
-//             width='300px'
-//           />
-//         <div  className='conent-p'> 
-//           <p id='pokeName'>{currentPokemon.name}</p>
-//           <p id='pokeType'>{currentPokemon.pokemonType}</p>
-//           <p >{currentPokemon.description}</p>
-//           <p className='title'>Ability:</p>
-
-//           <p id='pokeAbility'>{currentPokemon.ability}</p>
-//           <p className='title'>Weakness:</p>
-//           <p id='pokeWeakness'>{currentPokemon.weakness}</p>
-
-//           <h2>{currentPokemon.name}</h2>
-
-//           <p>{currentPokemon.description}</p>
-
-//           <p>{currentPokemon.ability}</p>
-//           <p>{currentPokemon.pokemonType}</p>
-//           <p>{currentPokemon.weakness}</p>
-
-//             <strong>Adopt Fee:</strong>${currentPokemon.adoptfee}{' '}
-//             </p>
-//             <button id='detailButton' onClick={addToCart}>Add to Cart</button>
-//             {/* <button
-//               disabled={!cart.find((p) => p._id === currentPokemon._id)}
-//               onClick={removeFromCart}
-//             >
-//               Remove from Cart
-//             </button> */}
-//             {/* <strong>Price:</strong>${currentPokemon.adoptfee}{' '} */}
-//             <button onClick={addToCart}>Adopt Me!</button>
-//             <button
-//               disabled={!cart.find((p) => p._id === currentPokemon._id)}
-//               onClick={removeFromCart}
-//             >
-//               ↩️
-//             </button>
-//           </p>
-
-
-//           </div>
-//           </div>
-//         </div>
-//       ) : null}
-//       {loading ? <img src={spinner} alt="loading" /> : null}
-//       <Cart />
-//       <Footer />
-//     </>
-//   );
-// }
 
 export default Detail;
