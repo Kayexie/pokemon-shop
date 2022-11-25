@@ -3,7 +3,7 @@ const { User, Pokemon, Poketype } = require('../models');
 
 db.once('open', async () => {
   await Poketype.deleteMany();
-  await db.dropCollection('types');
+  
   const poketypes = await Poketype.insertMany([
     { name: 'FireType' },
     { name: 'GrassType' },
@@ -35,7 +35,7 @@ db.once('open', async () => {
       description:
         'It is not satisfied unless it eats over 880 pounds of food every day. When it is done eating, it goes promptly to sleep.',
       image: '22.gif',
-      poketype: poketypes[1]._id,
+      poketype: poketypes[5]._id,
       ability: 'Thick Fat',
       weakness:'Fighting',
       quantity:1,
