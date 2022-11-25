@@ -12,7 +12,7 @@ function PokemonItem(item) {
     image,
     name,
     _id,
-    price,
+    adoptfee,
     quantity
   } = item;
 
@@ -50,7 +50,7 @@ function PokemonItem(item) {
       <div className="card-p">
         <p>{name}</p>
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${price}</span>
+        <span>${adoptfee}</span>
         <button onClick={addToCart}>Add to cart</button>
       </div>
     </div>

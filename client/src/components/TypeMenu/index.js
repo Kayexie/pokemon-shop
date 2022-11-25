@@ -2,49 +2,49 @@ import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { useStoreContext } from '../../utils/GlobalState';
 import {
-  UPDATE_TYPES,
-  UPDATE_CURRENT_Type,
+  UPDATE_POKETYPES,
+  UPDATE_CURRENT_POKETYPE,
 } from '../../utils/actions';
-import { QUERY_TYPES } from '../../utils/queries';
+import { QUERY_POKETYPES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
 function TypeMenu() {
   const [state, dispatch] = useStoreContext();
 
-  const { types } = state;
+  const { poketypes } = state;
 
-  const { loading, data: TypeData } = useQuery(QUERY_TYPES);
+  const { loading, data: PoketypeData } = useQuery(QUERY_POKETYPES);
 
   useEffect(() => {
-    if (TypeData) {
+    if (PoketypeData) {
       dispatch({
-        type: UPDATE_TYPES,
-        types: TypeData.types,
+        type: UPDATE_POKETYPES,
+        poketypes: PoketypeData.poketypes,
       });
-      TypeData.types.forEach((type) => {
-        idbPromise('types', 'put', type);
+      PoketypeData.poketypes.forEach((poketype) => {
+        idbPromise('poketypes', 'put', poketype);
       });
     } else if (!loading) {
-      idbPromise('types', 'get').then((types) => {
+      idbPromise('poketypes', 'get').then((poketypes) => {
         dispatch({
-          type: UPDATE_TYPES,
-          types: types,
+          type: UPDATE_POKETYPES,
+          poketypes: poketypes,
         });
       });
     }
-  }, [TypeData, loading, dispatch]);
+  }, [PoketypeData, loading, dispatch]);
 
   const handleClick = (id) => {
     dispatch({
-      type: UPDATE_CURRENT_Type,
-      currentType: id,
+      type: UPDATE_CURRENT_POKETYPE,
+      currentPoketype: id,
     });
   };
 
   return (
     <div className='type'>
       {/* <h2>Choose a type:</h2> */}
-      {types.map((item) => (
+      {poketypes.map((item) => (
         <button id="type-button"
           key={item._id}
           onClick={() => {
