@@ -43,7 +43,7 @@ function Nav() {
   return (
     <header className="flex-row">
        <div id="header-logo">
-        <Link to="/">
+        <Link to="/Home">
         <img src={logo} alt="logo" width="150"/>
         </Link>
         </div>

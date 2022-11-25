@@ -56,6 +56,8 @@ function PokemonList() {
               name={pokemon.name}
               adoptfee={pokemon.adoptfee}
               quantity={pokemon.quantity}
+              ability={pokemon.ability}
+              pokemonType={pokemon.pokemonType}
             />
           ))}
         </div>

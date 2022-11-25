@@ -91,6 +91,11 @@ function Detail() {
 
           <p>{currentPokemon.description}</p>
 
+          <p>{currentPokemon.ability}</p>
+          <p>{currentPokemon.pokemonType}</p>
+          <p>{currentPokemon.weakness}</p>
+          
+
           <p>
             <strong>Price:</strong>${currentPokemon.adoptfee}{' '}
             <button onClick={addToCart}>Add to Cart</button>
