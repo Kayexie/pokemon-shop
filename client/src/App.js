@@ -18,6 +18,7 @@ import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
+import TypeMenu from './components/TypeMenu';
 
 
 const httpLink = createHttpLink({
@@ -45,7 +46,8 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div> 
-          
+        <Routes>   
+        </Routes>
           <StoreProvider>
              <Nav />
             <Routes>   
