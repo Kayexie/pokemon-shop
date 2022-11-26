@@ -377,17 +377,7 @@ db.once('open', async () => {
       quantity:1,
       adoptfee: 9.99
     },
-    {
-      name: 'Treecko',
-      description:
-        'When Tauros begins whipping itself with its tails, it’s a warning that the Pokémon is about to charge with astounding speed.',
-      image: 'Treecko.png',
-      poketype: poketypes[1]._id,
-      ability: 'Overgrow',
-      weakness:'Fire',
-      quantity:1,
-      adoptfee: 9.99
-    },
+   
   ]);
 
   console.log('pokemons seeded');
