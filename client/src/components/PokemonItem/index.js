@@ -16,7 +16,6 @@ function PokemonItem(item) {
     _id,
     pokemonType,
     adoptfee,
-    ability,
    quantity,
   } = item;
 
@@ -44,7 +43,7 @@ function PokemonItem(item) {
   }
 
   return (
-    <div className="card py-1">
+    <div className="card">
       <img className="image"
           alt={name}
           src={`/images/${image}`}
@@ -53,12 +52,10 @@ function PokemonItem(item) {
       <p>{name}</p>
       </Link>
       <div className="card-p">
-
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>{pokemonType}</span>
-        <span>{ability}</span>
-        <span>${adoptfee}</span>
-        <button onClick={addToCart}>Add to cart</button>
+        <div>{quantity} {pluralize("item", quantity)} available</div>
+        <button id='pokemonType'>{pokemonType}</button>
+        <div>${adoptfee}</div>
+        <button id='button' onClick={addToCart}>Adopt Me</button>
       </div>
     </div>
   );
