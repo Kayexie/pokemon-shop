@@ -44,7 +44,7 @@ function PokemonList() {
   }
 
   return (
-    <div className="my-2">
+    <div className="containerTwo">
       {/* <h2>Our pokemons:</h2> */}
       {state.pokemons.length ? (
         <div className="flex-row">

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import back from '../assets/back.png';
+import Footer from '../components/Footer';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
@@ -14,19 +16,20 @@ function OrderHistory() {
 
   return (
     <>
-      <div className="container my-1">
-        <Link to="/">← Back to pokemons</Link>
-
+      <div className="containerOrder">
+      <div>
+      <Link to="/Home">
+          <img src={back} width='200px' alt='go back to home'></img>
+      </Link>
+      </div>
+      <div className='orderProduct'>
         {user ? (
           <>
-            <h2>
+            <div id='orderTitle'>
               Order History for {user.userName} 
-            </h2>
+            </div>
             {user.orders.map((order) => (
-              <div key={order._id} className="my-2">
-                <h3>
-                  {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
-                </h3>
+              <div key={order._id} className="orders">
                 <div className="flex-row">
                   {order.pokemons.map(({ _id, image, name,  adoptfee }, index) => (
                     <div key={index} className="card px-1 py-1">
@@ -45,6 +48,8 @@ function OrderHistory() {
           </>
         ) : null}
       </div>
+      </div>
+      <Footer/>
     </>
   );
 }

@@ -272,7 +272,7 @@ width: 80%;
   margin-bottom: var(--spacing-one);
 } */
 
-.my-2 {
+.containerTwo {
   width: 85%;
   max-width: 1200px;
   margin-left: auto;
@@ -286,7 +286,6 @@ width: 80%;
   padding-bottom: var(--spacing-two);
 }
 
-
 #image{
   border-radius: 10px;
 }
@@ -295,13 +294,10 @@ width: 80%;
   color: var(--error);
 }
 
+/* start page */
+
 .start-image{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/235044.jpeg");
-  height: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  background-color: white;
 }
 
 .start-text {
@@ -310,7 +306,7 @@ width: 80%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .start-text button {
@@ -318,13 +314,33 @@ width: 80%;
   outline: 0;
   display: inline-block;
   padding: 10px 25px;
-  color: black;
-  background-color: #ddd;
+  color: rgb(255, 255, 255);
+  background-color: rgb(203, 67, 67);
+  border-radius: 10px;
   text-align: center;
   cursor: pointer;
 }
 
 .start-text button:hover {
   background-color: #555;
-  color: white;
+  color: rgb(255, 255, 255);
+}
+
+/* Order History */
+.containerOrder {
+  margin: 100px;
+  display: flex;
+  
+}
+
+#orderTitle{
+  font-size: 50px;
+  text-align: center;
+}
+
+.orderProduct{
+  width: 50%;
+  background-color: white;
+  border-radius: 10px;
+  margin-left:200px;
 }
