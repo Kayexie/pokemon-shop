@@ -23,7 +23,7 @@ db.once('open', async () => {
       name: 'Charizard',
       description:
         'It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.',
-      image: 'charizard.png',
+      image: 'Charizard.png',
       poketype: poketypes[0]._id,
       pokemonType:'Fire',
       ability: 'Blaze',
@@ -47,7 +47,7 @@ db.once('open', async () => {
       name: 'Scorbunny',
       description:
         'A warm-up of running around gets fire energy coursing through this Pokémon’s body. Once that happens, it’s ready to fight at full power.',
-      image: 'scorbunny.png',
+      image: 'Scorbunny.png',
       poketype: poketypes[0]._id,
       pokemonType:'Fire',
       ability: 'Blaze',
@@ -59,7 +59,7 @@ db.once('open', async () => {
       name: 'Sobble',
       description:
         'When scared, this Pokémon cries. Its tears pack the chemical punch of 100 onions, and attackers won’t be able to resist weeping.',
-      image: 'sobble.png',
+      image: 'Sobble.png',
       poketype: poketypes[6]._id,
       pokemonType:'Water',
       ability: 'Torrent',
@@ -71,7 +71,7 @@ db.once('open', async () => {
       name: 'Grookey',
       description:
         'When it uses its special stick to strike up a beat, the sound waves produced carry revitalizing energy to the plants and flowers in the area.',
-      image: 'grookey.png',
+      image: 'Grookey.png',
       poketype: poketypes[1]._id,
       pokemonType:'Grass',
       ability: 'Overgrow',
@@ -83,7 +83,7 @@ db.once('open', async () => {
       name: 'Pikachu',
       description:
         'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.',
-      image: 'pichachu.png',
+      image: 'Pichachu.png',
       poketype: poketypes[2]._id,
       pokemonType:'Electric',
       ability: 'Static',
@@ -95,7 +95,7 @@ db.once('open', async () => {
       name: 'Arcanine',
       description:
         'The sight of it running over 6,200 miles in a single day and night has captivated many people.',
-      image: 'arcanine.png',
+      image: 'Arcanine.png',
       poketype: poketypes[0]._id,
       pokemonType:'Fire',
       ability: 'Flash fire',
@@ -143,7 +143,7 @@ db.once('open', async () => {
       name: 'Ditto',
       description:
         'It can reconstitute its entire cellular structure to change into what it sees, but it returns to normal when it relaxes.',
-      image: 'ditto.png',
+      image: 'Ditto.png',
       poketype: poketypes[4]._id,
       pokemonType:'Normal',
       ability: 'Limber',
@@ -227,7 +227,7 @@ db.once('open', async () => {
       name: 'jolteon',
       description:
         'If it is angered or startled, the fur all over its body bristles like sharp needles that pierce foes.',
-      image: 'jolteon.png',
+      image: 'Jolteon.png',
       poketype: poketypes[2]._id,
       pokemonType:'Electric',
       ability: 'Volt Absorb',

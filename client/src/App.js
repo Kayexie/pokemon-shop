@@ -56,7 +56,7 @@ function App() {
                 element={<Start />} 
               />
               <Route 
-                path="/home" 
+                path="/Home" 
                 element={<Home />} 
               />
               <Route 
