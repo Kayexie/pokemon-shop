@@ -77,9 +77,11 @@ const Cart = () => {
           X
         </span>
       </div>
-      <h2>Your Pokémons</h2>
+      
       {state.cart.length ? (
+        
         <div>
+          <h2>Your Pokémons</h2>
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
