@@ -52,9 +52,8 @@ function PokemonItem(item) {
       <p>{name}</p>
       </Link>
       <div className="card-p">
-        <div>{quantity} {pluralize("item", quantity)} available</div>
-        <button id='pokemonType'>{pokemonType}</button>
-        <div>${adoptfee}</div>
+      <button id='pokemonType'>{pokemonType}</button>
+        <div>{quantity} {pluralize("Pokémon", quantity)} available</div>
         <button id='button' onClick={addToCart}>Adopt Me</button>
       </div>
     </div>

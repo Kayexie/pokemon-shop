@@ -88,7 +88,7 @@ const Cart = () => {
             <strong>Adopt fee: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Adopt Me</button>
+              <button id='cart-button' onClick={submitCheckout}>Adopt Me</button>
             ) : (
               <span>(log in to check out)</span>
             )}
