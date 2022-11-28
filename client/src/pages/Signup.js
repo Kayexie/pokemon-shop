@@ -34,13 +34,13 @@ function Signup(props) {
     <div className="container my-1">
       <Link to="/login">← Go to Login</Link>
       
-      <h2 class="signup">Signup</h2>
+      <h2 className="signup">Signup</h2>
       <form onSubmit={handleFormSubmit}>
-        <div class="center">
+        <div className="center">
         <div className="flex-row space-between containerTwo">
           <label htmlFor="userName">User Name:</label>
           <input
-            placeholder="First"
+            placeholder="Your User Name"
             name="userName"
             type="userName"
             id="userName"
@@ -50,7 +50,7 @@ function Signup(props) {
         <div className="flex-row space-between containerTwo">
           <label htmlFor="email">Email:</label>
           <input
-            placeholder="youremail@test.com"
+            placeholder="youremail"
             name="email"
             type="email"
             id="email"

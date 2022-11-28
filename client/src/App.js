@@ -18,7 +18,7 @@ import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
-import TypeMenu from './components/TypeMenu';
+// import TypeMenu from './components/TypeMenu';
 
 
 const httpLink = createHttpLink({

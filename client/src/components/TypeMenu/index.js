@@ -43,7 +43,6 @@ function TypeMenu() {
 
   return (
     <div className='type'>
-      {/* <h2>Choose a type:</h2> */}
       {poketypes.map((item) => (
         <button id="type-button"
           key={item._id}
