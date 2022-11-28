@@ -36,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family:'Courier New', Courier, monospace;
+  font-family:Arial, Helvetica, sans-serif;
   font-weight: 300;
   margin: 5px 0;
   line-height: 1.25;
@@ -48,6 +48,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 h3 {
@@ -89,18 +90,6 @@ header a {
   color: white;
 }
 
-/* button {
-  font-size: 1rem;
-  text-decoration: none;
-  padding: 0.25rem 1rem;
-  border-radius: .5rem;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  margin: 0 3px;
-  background-color: #c9453a;
-} */
-
 .type{
   display: flex;
   justify-content: center;
@@ -123,15 +112,6 @@ header a {
 #type-button:hover{
   background-color: #80c9ac;
 }
-
-/* button:hover {
-  opacity: .8;
-} */
-
-/* button[disabled] {
-  cursor: default;
-  opacity: .8;
-} */
 
 img {
   max-width: 90%;
@@ -158,13 +138,6 @@ input:focus {
   border: 1px solid var(--secondary);
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
-
-/* .container {
-  width: 85%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-} */
 
 .flex-row {
   display: flex;
@@ -193,10 +166,6 @@ nav{
   justify-content: flex-end;
 }
 
-/* .mx-1 {
-  margin-right: var(--spacing-one);
-  margin-left: var(--spacing-one);
-} */
 
 .mx-2 {
   margin-right: var(--spacing-two);
@@ -267,11 +236,6 @@ width: 80%;
   border: none;
 }
 
-/* .my-1 {
-  margin-top: var(--spacing-one);
-  margin-bottom: var(--spacing-one);
-} */
-
 .containerTwo {
   width: 85%;
   max-width: 1200px;
@@ -330,7 +294,7 @@ width: 80%;
 .containerOrder {
   margin: 100px;
   display: flex;
-  
+  margin-bottom: 240px;
 }
 
 #orderTitle{
@@ -343,4 +307,5 @@ width: 80%;
   background-color: white;
   border-radius: 10px;
   margin-left:200px;
+  font-family: Arial, Helvetica, sans-serif;
 }

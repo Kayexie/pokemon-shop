@@ -74,20 +74,21 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="close" onClick={toggleCart}>
-        [close]
+        <span role="img" aria-label="shocked">
+          X
+        </span>
       </div>
-      <h2>Your Pokemons</h2>
+      <h2>Your Pokémons</h2>
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
-
           <div className="flex-row space-between">
             <strong>Adopt fee: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Let's go</button>
+              <button onClick={submitCheckout}>Adopt Me</button>
             ) : (
               <span>(log in to check out)</span>
             )}
@@ -95,10 +96,7 @@ const Cart = () => {
         </div>
       ) : (
         <h3>
-          <span role="img" aria-label="shocked">
-          😺
-          </span>
-          You haven't selected your pokemons yet!
+          None of the Pokémons are adopted yet.
         </h3>
       )}
     </div>

@@ -26,7 +26,7 @@ function OrderHistory() {
         {user ? (
           <>
             <div id='orderTitle'>
-              Order History for {user.userName} 
+              Adopt History for {user.userName} 
             </div>
             {user.orders.map((order) => (
               <div key={order._id} className="orders">
