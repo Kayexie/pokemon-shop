@@ -11,7 +11,7 @@ function Nav() {
         <dl className="nav-bar">
           <dd >
             <Link to="/orderHistory">
-              Order History
+              Your Pokémon
             </Link>
           </dd>
           <dd >
