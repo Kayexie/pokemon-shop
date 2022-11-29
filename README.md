@@ -16,13 +16,16 @@ in the detail page such as type and weakness.
 
 ## Installation
    N/A
+   
 ## Usage
    ![Screenshot](./client/src/assets/screenshot.png)
    - URL of GitHub Repo: https://github.com/Kayexie/pokemon-shop
-   - URL of deploy: https://poke-shop00.herokuapp.com/Home
-## License
-   N/A
+   - URL of deploy: https://poke-shop00.herokuapp.com
+
 ## Contributing
-  Ling Xin, Salman and Kaye
-## Tests
-   N/A
+
+- **Kaye** - [GitHub](https://github.com/Kayexie 'Kaye')
+
+- **Salman** - [GitHub](https://github.com/456salman 'Salman')
+
+- **Ling** - [GitHub](https://github.com/KennyLingx 'Ling')
