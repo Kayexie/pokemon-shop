@@ -23,7 +23,7 @@ db.once('open', async () => {
       name: 'Charizard',
       description:
         'It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.',
-      image: 'Charizard.png',
+      image: 'charizard.png',
       poketype: poketypes[0]._id,
       pokemonType:'Fire',
       ability: 'Blaze',
@@ -47,7 +47,7 @@ db.once('open', async () => {
       name: 'Scorbunny',
       description:
         'A warm-up of running around gets fire energy coursing through this Pokémon’s body. Once that happens, it’s ready to fight at full power.',
-      image: 'Scorbunny.png',
+      image: 'scorbunny.png',
       poketype: poketypes[0]._id,
       pokemonType:'Fire',
       ability: 'Blaze',
@@ -59,7 +59,7 @@ db.once('open', async () => {
       name: 'Sobble',
       description:
         'When scared, this Pokémon cries. Its tears pack the chemical punch of 100 onions, and attackers won’t be able to resist weeping.',
-      image: 'Sobble.png',
+      image: 'sobble.png',
       poketype: poketypes[6]._id,
       pokemonType:'Water',
       ability: 'Torrent',
@@ -71,7 +71,7 @@ db.once('open', async () => {
       name: 'Grookey',
       description:
         'When it uses its special stick to strike up a beat, the sound waves produced carry revitalizing energy to the plants and flowers in the area.',
-      image: 'Grookey.png',
+      image: 'grookey.png',
       poketype: poketypes[1]._id,
       pokemonType:'Grass',
       ability: 'Overgrow',
@@ -83,7 +83,7 @@ db.once('open', async () => {
       name: 'Pikachu',
       description:
         'Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.',
-      image: 'Pichachu.png',
+      image: 'pichachu.png',
       poketype: poketypes[2]._id,
       pokemonType:'Electric',
       ability: 'Static',
@@ -95,7 +95,7 @@ db.once('open', async () => {
       name: 'Arcanine',
       description:
         'The sight of it running over 6,200 miles in a single day and night has captivated many people.',
-      image: 'Arcanine.png',
+      image: 'arcanine.png',
       poketype: poketypes[0]._id,
       pokemonType:'Fire',
       ability: 'Flash fire',
@@ -119,7 +119,7 @@ db.once('open', async () => {
       name: 'Charmander',
       description:
         'It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.',
-      image: 'Charmander.png',
+      image: 'charmander.png',
       poketype: poketypes[0]._id,
       pokemonType:'Fire',
       ability: 'Blaze',
@@ -131,7 +131,7 @@ db.once('open', async () => {
       name: 'Chikorita',
       description:
         'Chikorita waves its leaf around to keep the foe at bay. However, a sweet fragrance also wafts from the leaf, becalming the battling Pokémon and creating a cozy, friendly atmosphere all around.',
-      image: 'chikorita.png',
+      image: 'Chikorita.png',
       poketype: poketypes[1]._id,
       pokemonType:'Grass',
       ability: 'Overgrow',
@@ -287,7 +287,7 @@ db.once('open', async () => {
       name: 'Ponyta',
       description:
         'It can’t run properly when it’s newly born. As it races around with others of its kind, its legs grow stronger.',
-      image: 'Ponyta.png',
+      image: 'ponyta.png',
       poketype: poketypes[0]._id,
       pokemonType:'Fire',
       ability: 'Flash fire',
