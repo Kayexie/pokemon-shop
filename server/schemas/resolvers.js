@@ -98,7 +98,6 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { pokemons }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ pokemons });
 

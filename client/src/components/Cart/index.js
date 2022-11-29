@@ -49,11 +49,10 @@ const Cart = () => {
 
   function submitCheckout() {
     const pokemonIds = [];
-    console.log(pokemonIds);
     state.cart.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
         pokemonIds.push(item._id);
-        console.log(item._id)
+        
       }
     });
 

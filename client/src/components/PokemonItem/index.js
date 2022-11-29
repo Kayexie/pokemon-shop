@@ -15,7 +15,6 @@ function PokemonItem(item) {
     name,
     _id,
     pokemonType,
-    adoptfee,
    quantity,
   } = item;
 
