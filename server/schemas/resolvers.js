@@ -70,7 +70,7 @@ const resolvers = {
           const fee = await stripe.prices.create({
             product: pokemon.id,
             unit_amount: pokemons[i].adoptfee * 100,
-            currency: 'usd',
+            currency: 'cad',
           });
           
         line_items.push({
@@ -98,7 +98,6 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { pokemons }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ pokemons });
 

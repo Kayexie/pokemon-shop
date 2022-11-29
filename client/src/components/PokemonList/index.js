@@ -45,7 +45,6 @@ function PokemonList() {
 
   return (
     <div className="containerTwo">
-      {/* <h2>Our pokemons:</h2> */}
       {state.pokemons.length ? (
         <div className="flex-row">
           {filterPokemons().map((pokemon) => (

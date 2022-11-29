@@ -27,11 +27,10 @@ function Detail() {
   const { pokemons, cart } = state;
 
   useEffect(() => {
-    // already in global store
     if (pokemons.length) {
       setCurrentPokemon(pokemons.find((pokemon) => pokemon._id === id));
     }
-    // retrieved from server
+ 
     else if (data) {
       dispatch({
         type: UPDATE_POKEMONS,
@@ -42,7 +41,7 @@ function Detail() {
         idbPromise('pokemons', 'put', pokemon);
       });
     }
-    // get cache from idb
+ 
     else if (!loading) {
       idbPromise('pokemons', 'get').then((indexedPokemons) => {
         dispatch({
